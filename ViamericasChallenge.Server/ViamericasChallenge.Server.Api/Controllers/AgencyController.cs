@@ -31,7 +31,7 @@ namespace ViamericasChallenge.Server.Api.Controllers
             {
                 var result = await new AgencyLogic().GetAgenciesAsync(city);
 
-                if (result == null)
+                if (result == null || result.Count == 0)
                     return NotFound("No Data");
                 else
                     return Ok(result);
